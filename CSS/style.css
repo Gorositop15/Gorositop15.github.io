@@ -10,32 +10,43 @@
         }
 #div1 {
     background-color:rgb(167, 233, 167) ;
-    height:10em ;
+    height:20em ;
+    margin-top:1em;
+    margin-bottom:1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding:2px ;
     border: 1px solid rgb(41, 59, 39);
 }
 #div2 {
     background-color:rgb(179, 178, 241) ;  
-     height:10em ;
-    font-family:'Courier New', Courier, monospace ;
-    padding:2px ;
-    border: 1px double rgb(41, 59, 39);
+    height:20em ;
+    margin-bottom:1em;
+    margin-top:1em;
+    font-family:'Courier New', Courier, monospace ;   
+     border: 1px double rgb(41, 59, 39);
 }
 #div3 {background-color:rgb(253, 255, 137) ; 
-    height:10em ;
+    position: relative;
+    height:20em ;
+    margin-top:1em;
+    margin-bottom:1em;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding :2px ;
-    border:dashed 1px rgb(41, 59, 39);
+        border:dashed 1px rgb(41, 59, 39);
 }
 #enlistar {   
+   
     display:flexbox;
     height: 15em;
     width: 15em;
 }
 #fotos{
     width: 100vw;
-    position: absolute;
+}
+
+#video{
+position: absolute;
+right: 1em;
+
+
 }
 
     
