@@ -9,11 +9,11 @@ function restaurarcolor(elemento) {
 }
 
 function cambiarcolorDeDiv(elemento) {
-    elemento.style.color ="rgb(179, 178, 241)" ;
+    elemento.style.background-color ="rgb(179, 178, 241)" ;
 }
 
 function restaurarcolorDeDiv(elemento) {
-    elemento.style.color = "rgb(167, 233, 167)" ;
+    elemento.style.background-color = "rgb(167, 233, 167)" ;
 }
 const div = document.getElementById("divs");
 const titulo = document.getElementById("titulo");  /*la constante busca en el documento,
@@ -36,6 +36,7 @@ titulo.addEventListener("mouseout", function() {
     restaurarcolor(titulo);
 
 });
+
 
 
 
