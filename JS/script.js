@@ -1,79 +1,3 @@
-var imgEscubi = new Image();
-imgEscubi.src = "HTML.escubi.jpg";
-var CanvasXSize = 800;
-var CanvasYSize = 200;
-var velocidad = 30;
-var y = -4.5;
-var dx = 0.75;
-var imgW;
-var imgH;
-var x = 0;
-var clearX;
-var clearY;
-var ctx;
-imgEscubi.onload = function () {
-  imgW = img.width * scale;
-  imgH = img.height * scale;
-
-  if (imgW > CanvasXSize) {
-    // imagen más grande que canvas
-    x = CanvasXSize - imgW;
-  }
-  if (imgW > CanvasXSize) {
-    // ancho de imagen más grande que canvas
-    clearX = imgW;
-  } else {
-    clearX = CanvasXSize;
-  }
-  if (imgH > CanvasYSize) {
-    // altura de la imagen más grande que canvas
-    clearY = imgH;
-  } else {
-    clearY = CanvasYSize;
-  }
-
-  // obtener contexto de canvas
-  ctx = document.getElementById("canvas").getContext("2d");
-
-  // establecer frecuencia de actualización
-  return setInterval(draw, speed);
-};
-
-function draw() {
-  ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
-
-  // si la imagen es <= tamaño de Canvas
-  if (imgW <= CanvasXSize) {
-    // reiniciar, comenzar desde el principio
-    if (x > CanvasXSize) {
-      x = -imgW + x;
-    }
-    // dibujar image1 adicional
-    if (x > 0) {
-      ctx.drawImage(img, -imgW + x, y, imgW, imgH);
-    }
-    // dibujar image2 adicional
-    if (x - imgW > 0) {
-      ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
-    }
-  }
-
-  // la imagen es > tamaño de Canvas
-  else {
-    // reiniciar, comenzar desde el principio
-    if (x > CanvasXSize) {
-      x = CanvasXSize - imgW;
-    }
-    // dibujar image adicional
-    if (x > CanvasXSize - imgW) {
-      ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
-    }
-  }
-  // dibujar imagen
-  ctx.drawImage(img, x, y, imgW, imgH);
-  // cantidad para moverse
-  x += dx;
-}
 
 
 function cambiarcolor(elemento) {
@@ -84,9 +8,24 @@ function restaurarcolor(elemento) {
     elemento.style.color = "blue" ;
 }
 
+function cambiarcolorDeDiv(elemento) {
+    elemento.style.color ="rgb(179, 178, 241)" ;
+}
+
+function restaurarcolorDeDiv(elemento) {
+    elemento.style.color = "rgb(167, 233, 167)" ;
+}
+const div = document.getElementById("divs");
 const titulo = document.getElementById("titulo");  /*la constante busca en el documento,
  el elemento por el id, en este caso el que se llama titulo */ 
 //const parrafo = document.getElementById("parrafo");
+div.addEventListener("mouseover", function() {
+    cambiarcolorDeDiv(div);
+  });
+titulo.addEventListener("mouseout", function() {
+    restaurarcolorDeDiv(div);
+
+});
 
 titulo.addEventListener("mouseover", function() {
     cambiarcolor(titulo);
@@ -97,6 +36,7 @@ titulo.addEventListener("mouseout", function() {
     restaurarcolor(titulo);
 
 });
+
 
 
 
