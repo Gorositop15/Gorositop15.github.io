@@ -1,5 +1,5 @@
 var imgEscubi = new Image();
-imgEscubi.src = "HTML.escubi..jpg";
+imgEscubi.src = "HTML.escubi.jpg";
 var CanvasXSize = 800;
 var CanvasYSize = 200;
 var velocidad = 30;
@@ -97,5 +97,6 @@ titulo.addEventListener("mouseout", function() {
     restaurarcolor(titulo);
 
 });
+
 
 
